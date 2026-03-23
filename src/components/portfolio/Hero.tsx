@@ -70,6 +70,13 @@ export default function Hero() {
           >
             Contactar
           </a>
+          <a
+            href="/Curriculum_Nicolle_Jimenez.pdf"
+            download
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-display font-semibold text-sm border border-primary/30 text-primary hover:bg-primary/10 active:scale-[0.97] transition-all duration-200"
+          >
+            📄 Descargar CV
+          </a>
         </div>
       </div>
 
