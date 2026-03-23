@@ -1,9 +1,9 @@
 const experiences = [
   { period: "Feb 2024 – Presente", title: "Community Manager", company: "Inmobiliaria Bosch", desc: "Gestión de redes sociales, creación de contenido y estrategias digitales." },
-  { period: "2024", title: "Asistente Administrativa & Diseñadora", company: "Gráficas Navarro", desc: "Diseño gráfico y apoyo administrativo en empresa de artes gráficas." },
-  { period: "2024", title: "Operaria de Inventarios", company: "FYGP", desc: "Control y gestión de inventarios." },
-  { period: "2023", title: "Pasantía", company: "Escenarium Events", desc: "Apoyo en diseño y producción de eventos." },
-  { period: "2021 – 2023", title: "Diseñadora Gráfica / CM / Atención al Cliente", company: "Freelance", desc: "Diseño gráfico, community management y servicio al cliente para múltiples marcas." },
+  { period: "2024", title: "Asistente Administrativa & Diseñadora Auxiliar", company: "Gráficas Navarro", desc: "Diseñadora junior en diseño de material publicitario, papelería en general, imagen a gran formato DTF y para sublimación." },
+  { period: "2024", title: "Operaria de Inventarios", company: "FYGP", desc: "Encargada de verificar la presencia y estado de las máquinas en el local, asegurando el control y registro del inventario físico." },
+  { period: "2023", title: "Pasantía", company: "Escenarium Events", desc: "Edición de videos y material gráfico. Apoyo en la ejecución de proyectos de diseño digital y gestión de tareas del equipo." },
+  { period: "2021 – 2023", title: "Diseñadora Gráfica / CM / Atención al Cliente", company: "Freelance", desc: "Diseño y edición de material gráfico para campañas. Atención y soporte a clientes. Gestión y creación de contenido para redes sociales." },
 ];
 
 export default function Experience() {

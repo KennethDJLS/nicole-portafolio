@@ -34,8 +34,9 @@ export default function About() {
           <div className="reveal-right">
             <p className="text-secondary-foreground text-base md:text-lg leading-relaxed mb-8 text-pretty">
               Tecnóloga en Producción Gráfica Digital con habilidades en diseño, edición y gestión de proyectos creativos. 
-              Experiencia en atención al cliente, gestión de redes sociales y estrategias digitales como Community Manager. 
-              Apasionada por la creatividad y el aprendizaje constante.
+              Experiencia en atención y servicio al cliente, así como en gestión de redes sociales y estrategias digitales como Community Manager. 
+              Capacidad para resolver problemas, trabajar en equipo y ofrecer soluciones personalizadas. 
+              Apasionada por la creatividad y aprender.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

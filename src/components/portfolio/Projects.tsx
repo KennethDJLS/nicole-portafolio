@@ -10,7 +10,7 @@ import clawImg from "@/assets/project-claw.jpg";
 const filters = ["Todos", "Social Media", "Fotografía", "Videos", "Modelado 3D", "Diseño Gráfico"];
 
 const projects = [
-  { title: "Social Media Inmobiliaria Bosch", desc: "Gestión de @inmobiliariabosch, +1000 seguidores", category: "Social Media", image: socialMediaImg },
+  { title: "Social Media Inmobiliaria Bosch", desc: "Gestión de @inmobiliariabosch — diseño gráfico, producción y edición de videos para redes sociales", category: "Social Media", image: socialMediaImg },
   { title: "Sesión Fotografía Editorial", desc: "Fotografía de moda dramática en estudio, iluminación profesional", category: "Fotografía", image: editorialImg },
   { title: "Sesión Fotografía Exterior", desc: "Ambiente caribeño, estilo editorial", category: "Fotografía", image: exteriorImg },
   { title: "Fotografía Larga Exposición", desc: "Light painting y efectos de movimiento", category: "Fotografía", image: longExposureImg },

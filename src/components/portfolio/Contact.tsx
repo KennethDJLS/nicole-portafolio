@@ -90,7 +90,7 @@ export default function Contact() {
                   <span className="text-xl mt-0.5">📍</span>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-wider">Dirección</p>
-                    <p className="text-sm">Calle 58 #44-86, Barranquilla</p>
+                    <p className="text-sm">Cr 31 #53b-58, Barranquilla</p>
                   </div>
                 </div>
               </div>
