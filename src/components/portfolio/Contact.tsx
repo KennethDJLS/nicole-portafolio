@@ -1,23 +1,23 @@
 import { useState } from "react";
-
+ 
 export default function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
-
+ 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSent(true);
     setTimeout(() => setSent(false), 3000);
     setFormState({ name: "", email: "", message: "" });
   };
-
+ 
   return (
     <section id="contacto" className="py-24 md:py-32 px-6 bg-card/50">
       <div className="max-w-5xl mx-auto">
         <h2 className="reveal font-display font-bold text-3xl md:text-4xl mb-16 text-center">
           <span className="gradient-text">Contacto</span>
         </h2>
-
+ 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Form */}
           <form onSubmit={handleSubmit} className="reveal-left space-y-5">
@@ -64,7 +64,7 @@ export default function Contact() {
               {sent ? "✓ Mensaje Enviado" : "Enviar Mensaje"}
             </button>
           </form>
-
+ 
           {/* Contact info */}
           <div className="reveal-right space-y-6">
             <div>
@@ -86,16 +86,9 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-xl mt-0.5">📍</span>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">Dirección</p>
-                    <p className="text-sm">Cr 31 #53b-58, Barranquilla</p>
-                  </div>
-                </div>
               </div>
             </div>
-
+ 
             <div>
               <h3 className="font-display font-semibold text-base mb-3">Redes Sociales</h3>
               <a
