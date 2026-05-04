@@ -131,22 +131,6 @@ export default function Contact() {
               </div>
             </div>
 
-            <div>
-              <h3 className="font-display font-semibold text-base mb-3">Redes Sociales</h3>
-              <a
-                href="https://instagram.com/nia_artdesing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-lg text-sm hover:bg-primary/20 transition-colors duration-200"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5"/>
-                  <circle cx="12" cy="12" r="5"/>
-                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-                </svg>
-                @nia_artdesing
-              </a>
-            </div>
           </div>
         </div>
       </div>
