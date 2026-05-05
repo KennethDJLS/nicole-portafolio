@@ -62,7 +62,7 @@ interface Project {
   mobileVideo?: boolean;
 }
  
-const filters = ["Todos", "Social Media", "Fotografía", "Videos", "Modelado 3D", "Diseño Gráfico"];
+const filters = ["Todos", "Fotografía", "Videos", "Modelado 3D", "Diseño Gráfico", "Social Media"];
  
 const projects: Project[] = [
   // SOCIAL MEDIA
@@ -181,25 +181,52 @@ function Modal({ project, onClose }: { project: Project; onClose: () => void }) 
 }
  
 // ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
+const NON_SOCIAL_CATEGORIES = ["Fotografía", "Videos", "Modelado 3D", "Diseño Gráfico"];
+const ITEMS_PER_CATEGORY = 3;
+
 export default function Projects() {
   const [active, setActive] = useState("Todos");
   const [selected, setSelected] = useState<Project | null>(null);
- 
-  const filtered = active === "Todos" ? projects : projects.filter((p) => p.category === active);
- 
+  const [showAll, setShowAll] = useState(false);
+
+  const socialProjects = projects.filter((p) => p.category === "Social Media");
+  const nonSocialProjects = projects.filter((p) => p.category !== "Social Media");
+
+  const getFiltered = () => {
+    if (active !== "Todos") return projects.filter((p) => p.category === active);
+    if (showAll) return [...nonSocialProjects, ...socialProjects];
+    const limited = NON_SOCIAL_CATEGORIES.flatMap((cat) =>
+      nonSocialProjects.filter((p) => p.category === cat).slice(0, ITEMS_PER_CATEGORY)
+    );
+    return [...limited, ...socialProjects];
+  };
+
+  const filtered = getFiltered();
+  const hasMore =
+    active === "Todos" &&
+    !showAll &&
+    NON_SOCIAL_CATEGORIES.some(
+      (cat) => nonSocialProjects.filter((p) => p.category === cat).length > ITEMS_PER_CATEGORY
+    );
+
+  const handleFilter = (f: string) => {
+    setActive(f);
+    setShowAll(false);
+  };
+
   return (
     <section id="portafolio" className="py-24 md:py-32 px-6 bg-card/50">
       <div className="max-w-6xl mx-auto">
         <h2 className="reveal font-display font-bold text-3xl md:text-4xl mb-12 text-center">
           Mis <span className="gradient-text">Proyectos</span>
         </h2>
- 
+
         {/* Filtros */}
         <div className="reveal flex flex-wrap justify-center gap-2 mb-12">
           {filters.map((f) => (
             <button
               key={f}
-              onClick={() => setActive(f)}
+              onClick={() => handleFilter(f)}
               className={`px-4 py-2 text-sm rounded-full font-body transition-all duration-200 active:scale-[0.96] ${
                 active === f
                   ? "gradient-bg text-foreground shadow-md shadow-primary/20"
@@ -210,7 +237,7 @@ export default function Projects() {
             </button>
           ))}
         </div>
- 
+
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((project) => (
@@ -227,7 +254,7 @@ export default function Projects() {
                   loading="lazy"
                 />
               </div>
- 
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
                 <h3 className="font-display font-bold text-lg mb-2">{project.title}</h3>
@@ -240,8 +267,20 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {/* Ver más / Ver menos */}
+        {active === "Todos" && (hasMore || showAll) && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="px-6 py-2.5 text-sm rounded-full font-body border border-border hover:border-primary/50 hover:bg-primary/10 transition-all duration-200"
+            >
+              {showAll ? "Ver menos" : "Ver más"}
+            </button>
+          </div>
+        )}
       </div>
- 
+
       {selected && <Modal project={selected} onClose={() => setSelected(null)} />}
     </section>
   );
